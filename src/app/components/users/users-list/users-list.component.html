@@ -1,0 +1,10 @@
+<div class="">
+    <h1>Users List</h1>
+    <div >
+    <li *ngFor="let user of users" > {{user.id}} -  {{user.name}}  </li> 
+    </div>
+
+    <button class="btn btn-primary" (click)="addUser()">
+        Agregar nuevo usuario
+    </button>
+</div>
