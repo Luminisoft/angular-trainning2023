@@ -1,37 +1,46 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.css']
+  styleUrls: ['./users-list.component.css'],
 })
 export class UsersListComponent {
+  users: any;
 
-  users:any;
+  createUserForm = this.formBuilder.group({
+    name:['',Validators.required],
+    email:['',Validators.email],
+  })
 
-  constructor(private userService:UsersService ){
+  constructor(
+    private userService: UsersService,
+    private formBuilder: FormBuilder
+  ) {
     this.getUsers();
   }
 
-  getUsers(){
-    this.userService.getAllUsers().subscribe((data:any)=>{
+  getUsers() {
+    this.userService.getAllUsers().subscribe((data: any) => {
       this.users = data;
-    })
+    });
   }
 
-  addUser(){
+  addUser() {
     // validacion de formulario
-    let user = {
-      id:1001,
-      name:"Giovani"
-    }
-    this.userService.addUser(user);
+    if(this.createUserForm.invalid) return;
+
+    let user = this.createUserForm.value;
+
+    let userWithId = user;
+
+    // this.userService.addUser(user);
   }
 
-  removeUser(id:number){
+  removeUser(id: number) {
     // validacion
     this.userService.deleteUser(id);
   }
-
 }

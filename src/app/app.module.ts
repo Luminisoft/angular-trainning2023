@@ -9,6 +9,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NotFound404Component } from './components/not-found404/not-found404.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UsersListComponent } from './components/users/users-list/users-list.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
