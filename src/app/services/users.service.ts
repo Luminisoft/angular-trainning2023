@@ -136,4 +136,19 @@ export class UsersService {
     this.users.push(user);
   }
 
+  deleteUser(id:number):void{
+    // find the item index
+    console.log("User id", id)
+    let index = this.users.findIndex((user:any)=>{
+      return user.id==id;
+    }); 
+
+    console.log("index in array:", index);
+
+    // remove user from list
+    this.users.splice(index,1);
+  }
+
+
+
 }

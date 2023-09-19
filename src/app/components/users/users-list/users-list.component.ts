@@ -29,4 +29,9 @@ export class UsersListComponent {
     this.userService.addUser(user);
   }
 
+  removeUser(id:number){
+    // validacion
+    this.userService.deleteUser(id);
+  }
+
 }
