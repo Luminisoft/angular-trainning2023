@@ -15,6 +15,7 @@ export class UsersListComponent {
     email:['',Validators.email],
   })
 
+
   constructor(
     private userService: UsersService,
     private formBuilder: FormBuilder
@@ -32,11 +33,13 @@ export class UsersListComponent {
     // validacion de formulario
     if(this.createUserForm.invalid) return;
 
-    let user = this.createUserForm.value;
+    let name = this.createUserForm.get('name').value
+    let email = this.createUserForm.get('email').value;
+    //let id = Math.trunc(Math.random()*1000);
 
-    let userWithId = user;
+    let newUser = {name,email};
 
-    // this.userService.addUser(user);
+    this.userService.addUser(newUser);
   }
 
   removeUser(id: number) {

@@ -11,6 +11,9 @@ import { UsersListComponent } from './components/users/users-list/users-list.com
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ProductsComponent } from './components/products/products.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +22,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     NotFound404Component,
     UsersListComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
