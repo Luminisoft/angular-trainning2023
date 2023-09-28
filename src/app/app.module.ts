@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
+import { ViewProductDetailsComponent } from './components/products/view-product-details/view-product-details.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProductsComponent } from './components/products/products.component';
     NotFound404Component,
     UsersListComponent,
     ProductsComponent,
+    ViewProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

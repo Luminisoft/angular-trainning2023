@@ -23,6 +23,7 @@ export class UsersListComponent {
     this.getUsers();
   }
 
+
   getUsers() {
     this.userService.getAllUsers().subscribe((data: any) => {
       this.users = data;

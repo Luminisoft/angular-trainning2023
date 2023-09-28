@@ -132,7 +132,7 @@ export class UsersService {
     return of(this.users);
   }
 
-  addUser(user:any){
+  addUser(user:any):void{
     // [1,2,3,4,5,6] length = 5
     // users.length + 1 
     // user.id = 6
