@@ -1,0 +1,13 @@
+<div class="card">
+    <img [src]="product.image" class="card-img-top" [alt]="product.title">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <button class="btn btn-primary" (click)="goToDetails(product.id)">
+        <a>Ver Producto Desde Componente</a>
+      </button>
+      <!-- <button class="btn btn-primary" [routerLink]="['products/']" [queryParams]="{id: product.id}">
+        <a>Ver Producto Desde HTML</a>
+      </button> -->
+    </div>
+</div>

@@ -17,7 +17,6 @@ export class ViewProductDetailsComponent implements OnInit {
     private router:Router, // Allows to go to another route.
     private productService:ProductService
     ){
-
   }
 
   ngOnInit(): void {

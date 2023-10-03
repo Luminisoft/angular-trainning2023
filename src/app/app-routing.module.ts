@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFound404Component } from './components/not-found404/not-found404.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
-import { ProductsComponent } from './components/products/products.component';
+import { ProductsComponent } from './components/products/list/products.component';
 import { ViewProductDetailsComponent } from './components/products/view-product-details/view-product-details.component';
 
 

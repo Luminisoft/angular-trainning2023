@@ -12,8 +12,9 @@ import { UsersListComponent } from './components/users/users-list/users-list.com
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ProductsComponent } from './components/products/products.component';
+import { ProductsComponent } from './components/products/list/products.component';
 import { ViewProductDetailsComponent } from './components/products/view-product-details/view-product-details.component';
+import { ProductCardComponent } from './components/products/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ViewProductDetailsComponent } from './components/products/view-product-
     UsersListComponent,
     ProductsComponent,
     ViewProductDetailsComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,
