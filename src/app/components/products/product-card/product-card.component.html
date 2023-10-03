@@ -1,13 +1,23 @@
 <div class="card">
-    <img [src]="product.image" class="card-img-top" [alt]="product.title">
     <div class="card-body">
-      <h5 class="card-title">{{product.title}}</h5>
-      <p class="card-text">{{product.description}}</p>
-      <button class="btn btn-primary" (click)="goToDetails(product.id)">
+      <div class="card-img-actions">
+        <img [src]="product.image" class="card-img rounded mx-auto d-block">
+      </div>
+    </div>
+    <div class="card-body bg-light text-center">
+      <div class="mb-2">
+        <h5 class="font-weight-semibold mb-2">
+          {{product.title}}
+        </h5>
+        <h6 class="text-muted">{{product.category}}</h6>
+      </div>
+      <h3 class="mb-0 font-weight-semibold">$100</h3>
+      <div class="text-muted mb-3">{{product.rating.count}} reviews</div>
+      <button type="button" class="btn bg-cart" (click)="goToDetails(product.id)">
         <a>Ver Producto Desde Componente</a>
       </button>
-      <!-- <button class="btn btn-primary" [routerLink]="['products/']" [queryParams]="{id: product.id}">
+      <button class="btn btn-primary" [routerLink]="['/products/', product.id]">
         <a>Ver Producto Desde HTML</a>
-      </button> -->
+      </button>
     </div>
-</div>
+  </div>

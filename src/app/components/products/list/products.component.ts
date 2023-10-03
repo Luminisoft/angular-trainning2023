@@ -13,8 +13,7 @@ export class ProductsComponent {
   products:Product[];
   
   constructor(
-    private productService:ProductService,
-    private router:Router
+    private productService:ProductService
   ){
     this.getAllProducts();
   }
@@ -24,10 +23,6 @@ export class ProductsComponent {
       console.log(data);
       this.products = data;
     })
-  }
-
-  goToDetails(id:number){
-    this.router.navigate(["products/",id]);
   }
 
 }
