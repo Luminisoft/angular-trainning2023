@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
 
+  constructor(private authService:AuthService){
+    
+  }
+  
   // Data binding
   // 1. Interpolation
 
@@ -28,18 +34,16 @@ export class NavbarComponent {
     "Alex"
   ]
 
-  isLoggedIn: boolean = true;
-
-  styles={
-    // operador ternario
-    button: this.isLoggedIn ? "show" : "hidden",
-    // input:  this.isActive ? "form-control me-2" : "btn btn-danger",
-  }
-
-
   incrementCounter(){
     this.counter += 1;
   }
 
+  isAuthenticated = false;
+
+  ngOnInit(): void {
+    this.authService.getAuthObservable().subscribe(isAuthenticated=>{
+      this.isAuthenticated = isAuthenticated;
+    })
+  }
 
 }

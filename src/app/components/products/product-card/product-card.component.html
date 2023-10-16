@@ -16,8 +16,9 @@
       <button type="button" class="btn bg-cart" (click)="goToDetails(product.id)">
         <a>Ver Producto Desde Componente</a>
       </button>
+      <!-- http://localhost:luminicel/products/10 -->
       <button class="btn btn-primary" [routerLink]="['/products/', product.id]">
-        <a>Ver Producto Desde HTML</a>
+        <a>Ver Producto Desde la Vista</a>
       </button>
     </div>
   </div>

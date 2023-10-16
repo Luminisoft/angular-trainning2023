@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductsComponent {
 
-  products:Product[];
+  products:Product[] = [];
   
   constructor(
     private productService:ProductService
@@ -19,7 +19,7 @@ export class ProductsComponent {
   }
 
   getAllProducts(){
-    this.productService.getAllProducts().subscribe((data)=>{
+    this.productService.getAllProducts().subscribe(data=>{
       console.log(data);
       this.products = data;
     })

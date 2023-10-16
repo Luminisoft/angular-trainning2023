@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ViewProductDetailsComponent implements OnInit {
 
-  product:Product;
+  product:Product | undefined;
 
   constructor(
     private route: ActivatedRoute, // Describe the current route 

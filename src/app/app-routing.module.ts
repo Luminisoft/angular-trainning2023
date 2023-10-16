@@ -6,6 +6,8 @@ import { NotFound404Component } from './components/not-found404/not-found404.com
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 import { ProductsComponent } from './components/products/list/products.component';
 import { ViewProductDetailsComponent } from './components/products/view-product-details/view-product-details.component';
+import { LoginComponent } from './pages/login/login.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,9 @@ const routes: Routes = [
   {path:'users',component:UsersListComponent},
   {path:'products',component:ProductsComponent},
   {path:'products/:id', component:ViewProductDetailsComponent},
+  // {path:'auth/signup',component:RegisterComponent}
+  {path:'auth/signin',component:LoginComponent},
+  {path:'user-profile',component:UserProfileComponent},
   {path:'**', redirectTo:'/404'}
 ];
 
