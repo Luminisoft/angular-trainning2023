@@ -155,6 +155,19 @@ export class UsersService {
     this.users.splice(index,1);
   }
 
+  updateUser(id:number, data):void{
+    console.log("User id", id)
+    let index = this.users.findIndex((user:any)=>{
+      return user.id==id;
+    }); 
+    
+    let existentUser = this.users.at(index);
+
+    existentUser.name = data.name;
+    existentUser.email = data.email;
+    existentUser.username  = data.userame;
+
+  }
 
 
 }

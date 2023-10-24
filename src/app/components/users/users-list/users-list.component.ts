@@ -47,4 +47,8 @@ export class UsersListComponent {
     // validacion
     this.userService.deleteUser(id);
   }
+
+  editUser(id:number){
+    
+  }
 }

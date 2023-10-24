@@ -7,6 +7,8 @@ import { UsersListComponent } from './components/users/users-list/users-list.com
 import { ProductsComponent } from './components/products/list/products.component';
 import { ViewProductDetailsComponent } from './components/products/view-product-details/view-product-details.component';
 import { LoginComponent } from './pages/login/login.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -18,6 +20,7 @@ const routes: Routes = [
   {path:'products',component:ProductsComponent},
   {path:'products/:id', component:ViewProductDetailsComponent},
   {path:'auth/signin',component:LoginComponent},
+  {path:'user-profile', component:UserProfileComponent, canActivate:[AuthGuard]},
   {path:'**', redirectTo:'/404'}
 ];
 
