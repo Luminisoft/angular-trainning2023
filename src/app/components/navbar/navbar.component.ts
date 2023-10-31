@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,8 @@ export class NavbarComponent {
 
   // Data binding
   // 1. Interpolation
+
+  constructor(private auathService:AuthService){}
 
   title:string = "Esta es otra aplicacion";
 
@@ -36,10 +39,17 @@ export class NavbarComponent {
     // input:  this.isActive ? "form-control me-2" : "btn btn-danger",
   }
 
+  isAuthenticated:boolean = true;
+
 
   incrementCounter(){
     this.counter += 1;
   }
 
+  ngOnInit(){
+    this.auathService.getAuthObservable().subscribe(isAuth=>{
+      this.isAuthenticated = isAuth
+    })
+  }
 
 }

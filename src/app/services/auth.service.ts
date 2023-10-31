@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { User } from '../core/domain/User.interface';
 import { Router } from '@angular/router';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  private authListener:Subject<boolean> = new BehaviorSubject<boolean>(this.isLogged());
 
   constructor(private router:Router) { }
 
@@ -34,6 +37,7 @@ export class AuthService {
     }
 
     this.saveUserDetails(user);
+    this.authListener.next(true)
     this.router.navigate(['/user-profile']);
     
   }
@@ -48,11 +52,16 @@ export class AuthService {
 
   logout():void{
     localStorage.clear();
+    this.authListener.next(false)
     this.router.navigate(['/home']);
   }
 
   isLogged():boolean{
     return localStorage.getItem('user')!=null ? true : false;
+  }
+
+  getAuthObservable():Observable<boolean>{
+    return this.authListener.asObservable();
   }
 
 }
